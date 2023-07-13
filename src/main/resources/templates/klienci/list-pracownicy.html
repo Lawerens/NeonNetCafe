@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <title>Lista pracowników</title>
+    <style>
+        body, html{
+            background-color: #212529;
+        }
+
+        h3{
+            color: #E4E2DB;
+            text-align: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+<div class="container bg-dark">
+    <h3>Lista pracowników</h3>
+    <table class="table table-bordered table-striped table-dark">
+        <thead class="table-dark">
+        <tr>
+            <th>Username</th>
+            <th>Password</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr th:each="tempUsers : ${users}">
+            <td th:text="${tempUsers.username}"></td>
+            <td th:text="${tempUsers.password}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

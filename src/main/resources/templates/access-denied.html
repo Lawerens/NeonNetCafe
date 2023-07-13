@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <title>ACCESS DENIED!</title>
+    <meta charset="utf-8">
+    <style>
+        body{
+            background-color: #101728;
+            color: #E4E2DB;
+            text-align: center;
+        }
+
+        h2{
+            font-size: 36px;
+            font-weight: bold;
+        }
+
+        a{
+            text-decoration: none;
+            color: #ff3c5f;
+            font-size: 18px;
+        }
+
+        a:hover{
+            text-shadow: 0 0 10px #ff3c5f,
+            0 0 20px #ff3c5f,
+            0 0 40px #ff3c5f,
+            0 0 80px #ff3c5f,
+            0 0 120px #ff3c5f;
+            color: #ff3c5f;
+            transition: 0.8s;
+        }
+    </style>
+</head>
+<body>
+<h2>Nieatoryzowany dostęp!</h2>
+
+<a th:href="${#authorization.expression('isAuthenticated()') ? '/zalogowany' : '/'}">Powrót do strony głównej</a>
+</body>
+</html>
